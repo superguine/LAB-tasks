@@ -1,0 +1,99 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001e946b45fd0 .scope module, "halfadnor_tb" "halfadnor_tb" 2 1;
+ .timescale 0 0;
+v000001e946b53d90_0 .var "a", 0 0;
+v000001e946b53ed0_0 .var "b", 0 0;
+v000001e946b53750_0 .net "carry", 0 0, L_000001e946b543c0;  1 drivers
+v000001e946b54290_0 .net "o1", 0 0, L_000001e946b56380;  1 drivers
+v000001e946b541f0_0 .net "o2", 0 0, L_000001e946b23220;  1 drivers
+v000001e946b53890_0 .net "o3", 0 0, L_000001e946b54350;  1 drivers
+v000001e946b536b0_0 .net "sum", 0 0, L_000001e946b54430;  1 drivers
+S_000001e946b46160 .scope module, "gate1" "nor_gate" 2 4, 3 1 0, S_000001e946b45fd0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001e946b56380 .functor NOR 1, v000001e946b53d90_0, v000001e946b53ed0_0, C4<0>, C4<0>;
+v000001e946b48c70_0 .net "i1", 0 0, v000001e946b53d90_0;  1 drivers
+v000001e946b48d10_0 .net "i2", 0 0, v000001e946b53ed0_0;  1 drivers
+v000001e946b48db0_0 .net "o1", 0 0, L_000001e946b56380;  alias, 1 drivers
+S_000001e946b22a40 .scope module, "gate2" "nor_gate" 2 5, 3 1 0, S_000001e946b45fd0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001e946b23220 .functor NOR 1, v000001e946b53d90_0, v000001e946b53d90_0, C4<0>, C4<0>;
+v000001e946b48e50_0 .net "i1", 0 0, v000001e946b53d90_0;  alias, 1 drivers
+v000001e946b48ef0_0 .net "i2", 0 0, v000001e946b53d90_0;  alias, 1 drivers
+v000001e946b22bd0_0 .net "o1", 0 0, L_000001e946b23220;  alias, 1 drivers
+S_000001e946b22c70 .scope module, "gate3" "nor_gate" 2 6, 3 1 0, S_000001e946b45fd0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001e946b54350 .functor NOR 1, v000001e946b53ed0_0, v000001e946b53ed0_0, C4<0>, C4<0>;
+v000001e946b22e00_0 .net "i1", 0 0, v000001e946b53ed0_0;  alias, 1 drivers
+v000001e946b52d00_0 .net "i2", 0 0, v000001e946b53ed0_0;  alias, 1 drivers
+v000001e946b52da0_0 .net "o1", 0 0, L_000001e946b54350;  alias, 1 drivers
+S_000001e946b52e40 .scope module, "gate4" "nor_gate" 2 7, 3 1 0, S_000001e946b45fd0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001e946b543c0 .functor NOR 1, L_000001e946b23220, L_000001e946b54350, C4<0>, C4<0>;
+v000001e946b52fd0_0 .net "i1", 0 0, L_000001e946b23220;  alias, 1 drivers
+v000001e946b53070_0 .net "i2", 0 0, L_000001e946b54350;  alias, 1 drivers
+v000001e946b53110_0 .net "o1", 0 0, L_000001e946b543c0;  alias, 1 drivers
+S_000001e946b531b0 .scope module, "gate5" "nor_gate" 2 8, 3 1 0, S_000001e946b45fd0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001e946b54430 .functor NOR 1, L_000001e946b543c0, L_000001e946b56380, C4<0>, C4<0>;
+v000001e946b54010_0 .net "i1", 0 0, L_000001e946b543c0;  alias, 1 drivers
+v000001e946b53cf0_0 .net "i2", 0 0, L_000001e946b56380;  alias, 1 drivers
+v000001e946b53430_0 .net "o1", 0 0, L_000001e946b54430;  alias, 1 drivers
+    .scope S_000001e946b45fd0;
+T_0 ;
+    %vpi_call 2 11 "$display", " Implementation of halfadder , using NOR gate " {0 0 0};
+    %vpi_call 2 12 "$display", " Input   |   sum | carry " {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e946b53d90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e946b53ed0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 15 "$display", "  %d %d        %d      %d", v000001e946b53d90_0, v000001e946b53ed0_0, v000001e946b536b0_0, v000001e946b53750_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e946b53d90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e946b53ed0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 18 "$display", "  %d %d        %d      %d", v000001e946b53d90_0, v000001e946b53ed0_0, v000001e946b536b0_0, v000001e946b53750_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e946b53d90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e946b53ed0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 21 "$display", "  %d %d        %d      %d", v000001e946b53d90_0, v000001e946b53ed0_0, v000001e946b536b0_0, v000001e946b53750_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e946b53d90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e946b53ed0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 24 "$display", "  %d %d        %d      %d", v000001e946b53d90_0, v000001e946b53ed0_0, v000001e946b536b0_0, v000001e946b53750_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "halfadnor_tb.v";
+    "nor.v";

@@ -1,0 +1,99 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000210284b6b70 .scope module, "xor_using_nand_tb" "xor_using_nand_tb" 2 1;
+ .timescale 0 0;
+v00000210284c2270_0 .var "t_a", 0 0;
+v00000210284c2e50_0 .var "t_b", 0 0;
+v00000210284c23b0_0 .net "t_u", 0 0, L_00000210284c3200;  1 drivers
+v00000210284c2b30_0 .net "t_w", 0 0, L_00000210284c3190;  1 drivers
+v00000210284c2db0_0 .net "t_x", 0 0, L_00000210284c6390;  1 drivers
+v00000210284c2770_0 .net "t_y", 0 0, L_0000021028493220;  1 drivers
+v00000210284c2310_0 .net "t_z", 0 0, L_00000210284c3270;  1 drivers
+S_00000210284b67d0 .scope module, "gate1" "nand_gate" 2 4, 3 1 0, S_00000210284b6b70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_00000210284c6390 .functor NAND 1, v00000210284c2270_0, v00000210284c2270_0, C4<1>, C4<1>;
+v00000210284c5f80_0 .net "i1", 0 0, v00000210284c2270_0;  1 drivers
+v0000021028492e40_0 .net "i2", 0 0, v00000210284c2270_0;  alias, 1 drivers
+v00000210284c6020_0 .net "o1", 0 0, L_00000210284c6390;  alias, 1 drivers
+S_00000210284c60c0 .scope module, "gate2" "nand_gate" 2 5, 3 1 0, S_00000210284b6b70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_0000021028493220 .functor NAND 1, v00000210284c2e50_0, v00000210284c2e50_0, C4<1>, C4<1>;
+v00000210284c6250_0 .net "i1", 0 0, v00000210284c2e50_0;  1 drivers
+v00000210284c62f0_0 .net "i2", 0 0, v00000210284c2e50_0;  alias, 1 drivers
+v0000021028510820_0 .net "o1", 0 0, L_0000021028493220;  alias, 1 drivers
+S_00000210285108c0 .scope module, "gate3" "nand_gate" 2 6, 3 1 0, S_00000210284b6b70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_00000210284c3190 .functor NAND 1, L_0000021028493220, L_00000210284c6390, C4<1>, C4<1>;
+v0000021028510a50_0 .net "i1", 0 0, L_0000021028493220;  alias, 1 drivers
+v0000021028510af0_0 .net "i2", 0 0, L_00000210284c6390;  alias, 1 drivers
+v0000021028510b90_0 .net "o1", 0 0, L_00000210284c3190;  alias, 1 drivers
+S_0000021028510c30 .scope module, "gate4" "nand_gate" 2 7, 3 1 0, S_00000210284b6b70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_00000210284c3200 .functor NAND 1, v00000210284c2270_0, v00000210284c2e50_0, C4<1>, C4<1>;
+v0000021028510dc0_0 .net "i1", 0 0, v00000210284c2270_0;  alias, 1 drivers
+v0000021028510e60_0 .net "i2", 0 0, v00000210284c2e50_0;  alias, 1 drivers
+v0000021028510f00_0 .net "o1", 0 0, L_00000210284c3200;  alias, 1 drivers
+S_00000210284c1ff0 .scope module, "gate5" "nand_gate" 2 8, 3 1 0, S_00000210284b6b70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_00000210284c3270 .functor NAND 1, L_00000210284c3190, L_00000210284c3200, C4<1>, C4<1>;
+v00000210284c2810_0 .net "i1", 0 0, L_00000210284c3190;  alias, 1 drivers
+v00000210284c28b0_0 .net "i2", 0 0, L_00000210284c3200;  alias, 1 drivers
+v00000210284c2590_0 .net "o1", 0 0, L_00000210284c3270;  alias, 1 drivers
+    .scope S_00000210284b6b70;
+T_0 ;
+    %vpi_call 2 11 "$display", "NAND gate implementation using basic gates" {0 0 0};
+    %vpi_call 2 12 "$display", "Input | output" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000210284c2270_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000210284c2e50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 15 "$display", "%d %d \011%d", v00000210284c2270_0, v00000210284c2e50_0, v00000210284c2310_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000210284c2270_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000210284c2e50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 18 "$display", "%d %d \011%d", v00000210284c2270_0, v00000210284c2e50_0, v00000210284c2310_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000210284c2270_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000210284c2e50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 21 "$display", "%d %d \011%d", v00000210284c2270_0, v00000210284c2e50_0, v00000210284c2310_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000210284c2270_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000210284c2e50_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 24 "$display", "%d %d \011%d", v00000210284c2270_0, v00000210284c2e50_0, v00000210284c2310_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nandasxnor_tb.v";
+    "nand.v";

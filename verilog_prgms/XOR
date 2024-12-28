@@ -1,0 +1,59 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001a09f78ede0 .scope module, "xor_gate_tb" "xor_gate_tb" 2 1;
+ .timescale 0 0;
+v000001a09f7d5ef0_0 .var "t_a", 0 0;
+v000001a09f7d5f90_0 .var "t_b", 0 0;
+v000001a09f7d6030_0 .net "t_y", 0 0, L_000001a09f7d60d0;  1 drivers
+S_000001a09f7d5cc0 .scope module, "gate1" "xor_gate" 2 4, 3 1 0, S_000001a09f78ede0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "o1";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+L_000001a09f7d60d0 .functor XOR 1, v000001a09f7d5ef0_0, v000001a09f7d5f90_0, C4<0>, C4<0>;
+v000001a09f7a2f90_0 .net "i1", 0 0, v000001a09f7d5ef0_0;  1 drivers
+v000001a09f7a28d0_0 .net "i2", 0 0, v000001a09f7d5f90_0;  1 drivers
+v000001a09f7d5e50_0 .net "o1", 0 0, L_000001a09f7d60d0;  alias, 1 drivers
+    .scope S_000001a09f78ede0;
+T_0 ;
+    %vpi_call 2 7 "$display", "XOR gate implementation" {0 0 0};
+    %vpi_call 2 8 "$display", "Input | output" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001a09f7d5ef0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001a09f7d5f90_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 11 "$display", "%d %d %d", v000001a09f7d5ef0_0, v000001a09f7d5f90_0, v000001a09f7d6030_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001a09f7d5ef0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001a09f7d5f90_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 14 "$display", "%d %d %d", v000001a09f7d5ef0_0, v000001a09f7d5f90_0, v000001a09f7d6030_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001a09f7d5ef0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001a09f7d5f90_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 17 "$display", "%d %d %d", v000001a09f7d5ef0_0, v000001a09f7d5f90_0, v000001a09f7d6030_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001a09f7d5ef0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001a09f7d5f90_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 20 "$display", "%d %d %d", v000001a09f7d5ef0_0, v000001a09f7d5f90_0, v000001a09f7d6030_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "xor_tb.v";
+    "xor.v";
