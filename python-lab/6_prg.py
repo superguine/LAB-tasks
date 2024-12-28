@@ -1,0 +1,9 @@
+x=int(input(" Enter a 4digit integer: "))
+a=x//1000
+b=x%1000
+c=b//100
+d=x%100
+e=d//10
+f=x%10
+s=a+c+e+f
+print(f'{a}+{c}+{e}+{f}={s}')
